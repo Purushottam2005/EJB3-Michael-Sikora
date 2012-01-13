@@ -1,0 +1,25 @@
+tested in windows 7
+
+-you might have glassfish in C:\Program Files\glassfish-3.1.1
+-better copy to  C:\glassfish-3.1.1 (windows 7 security might not allow you to create clients in program files)
+
+- build lab1-maven 
+
+-deploy manually lab1-maven/lab1-maven-ear/target/lab1-maven-ear-1.0.ear to glassfish
+
+-go  to glassfish bin
+
+C:\glassfish-3.1.1\bin>asadmin get-client-stubs --appname lab1-maven-ear-1.0 c:\local
+Command get-client-stubs executed successfully.
+
+C:\glassfish-3.1.1\bin>appclient -jar c:\local\lab1-maven-ear-1.0Client.jar 1 john doe
+[Customer Id =1,first name=john,last name=doe]
+
+
+if you find errors:
+
+-shutdown netbeans
+-download somewhere procexp.exe and make sure no java process is hanging around(jvm 1527 already in use)
+-delete sun-appserv-samples database
+-redeploy to cause the creation of the database and table
+-run appclient again

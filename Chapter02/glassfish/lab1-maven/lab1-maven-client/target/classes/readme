@@ -1,0 +1,9 @@
+1) netbeans users
+
+to get a default jndi.property in the classpath of the client:
+right click inside pom - insert code - find gf-client-3.1.1 
+(book says appserv-rt.jar is enough but it did not work for me)
+
+maven will find in central
+
+
