@@ -1,0 +1,3 @@
+build/deploy as usual.
+notice that:
+when you undeploy the sequence table is not deleted

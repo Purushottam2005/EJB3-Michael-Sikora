@@ -1,0 +1,4 @@
+build/deploy as usual.
+notice that:
+when you undeploy the sequence table is not deleted
+can anybody tell me why the sequence table shows 50 all the time?
