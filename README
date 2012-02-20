@@ -3,15 +3,20 @@ tested in windows 7
 -you might have glassfish in C:\Program Files\glassfish-3.1.1
 -better copy to  C:\glassfish-3.1.1 (windows 7 security might not allow you to create clients in program files)
 
+to compile:
+
 - in netbeans clean anb build 
 
+to deploy:
 -deploy manually to glassfish
 
--create dir (C:/anyname for the appclient stubs
+to run:
+
+-create dir C:/anyname for the appclient stubs (I used c:\local
 
 -go  to glassfish bin
 
-C:\glassfish-3.1.1\bin>asadmin get-client-stubs --appname lab{#}-maven-ear-1.0 C:/anyname
+C:\glassfish-3.1.1\bin>asadmin get-client-stubs --appname lab{#}-maven-ear-1.0 C:/local
 Command get-client-stubs executed successfully.
 
 C:\glassfish-3.1.1\bin>appclient -jar c:\local\lab{#}-maven-ear-1.0Client.jar 1 john doe
@@ -26,5 +31,3 @@ if you find errors:
 -run appclient again
 
 
-bugs encountered:
-1)

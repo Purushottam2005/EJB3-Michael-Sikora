@@ -1,0 +1,13 @@
+1)	netbeans mvn clean and build
+2)	manually deploy :
+W:\LA\academic\booksample\ejb3\5609_Code\Chapter07\glassfish\lab3-maven\lab3-maven-ear\target
+3)	since for this example I have moved glassfish to c:\ make sure you also move javadb to c:\
+(find in C:\Program Files\glassfish-3.1.1\javadb)
+This is not needed to run but to avoid getting the warning “Cannot find javadb client jar”
+4)	from the command prompt:
+a)	get the client stubs
+C:\glassfish-3.1.1\bin>asadmin get-client-stubs --appname lab3-maven-ear-1.0 c:\local
+Command get-client-stubs executed successfully.
+b)	Run the application
+C:\glassfish-3.1.1\bin>appclient -jar c:\local\lab3-maven-ear-1.0Client.jar 1 john doe
+[Customer Id =1,first name=john,last name=doe]

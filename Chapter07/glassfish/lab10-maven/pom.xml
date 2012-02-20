@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ejb3book.chapter07</groupId>
+  <artifactId>lab10-maven</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+  <name>lab10-maven</name>
+  <modules>
+    <module>lab10-maven-ear</module>
+    <module>lab10-maven-ejb</module>
+    <module>lab10-maven-jar</module>
+    <module>lab10-maven-client</module>
+    <module>lab10-maven-client2_jar_1.0</module>
+  </modules>
+</project>

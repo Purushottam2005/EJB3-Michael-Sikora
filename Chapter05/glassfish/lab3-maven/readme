@@ -1,0 +1,101 @@
+build/deploy as usual.
+
+run:
+
+C:\glassfish-3.1.1\bin>asadmin get-client-stubs --appname lab3-maven-ear-1.0 c:\
+local
+Command get-client-stubs executed successfully.
+
+C:\glassfish-3.1.1\bin>appclient -jar c:\local\lab3-maven-ear-1.0Client.jar 1
+subQuery:
+[account id =5,balance=5200.0,account type=S]
+[account id =3,balance=123.65,account type=C]
+[account id =7,balance=200.0,account type=S]
+[account id =6,balance=400.0,account type=X]
+[account id =8,balance=250.0,account type=X]
+[account id =1,balance=430.5,account type=C]
+[account id =4,balance=23.0,account type=C]
+subQuery2:
+[Customer Id =4,first name=EDWARD,last name=COOK, referee=[referee id=4,name=KIN
+G,comments=HE SHOULD BANK WITH US],addresses={IndirectList: not instantiated},ac
+counts=[[account id =4,balance=23.0,account type=C], [account id =5,balance=5200
+.0,account type=S], [account id =6,balance=400.0,account type=X]], monthly incom
+e=3000.0]
+[Customer Id =3,first name=JAMES,last name=PAGE, referee=[referee id=3,name=MICH
+AEL ELLIS,comments=MAJOR SHAREHOLDER OF THIS BANK],addresses={IndirectList: not
+instantiated},accounts=[[account id =3,balance=123.65,account type=C], [account
+id =7,balance=200.0,account type=S], [account id =8,balance=250.0,account type=X
+]], monthly income=2000.0]
+subQuery3:
+[Customer Id =2,first name=JANE,last name=KING, referee=[referee id=2,name=DR WI
+LLIAM SMITH,comments=MEDICAL PRACTIONER],addresses={IndirectList: not instantiat
+ed},accounts=[[account id =2,balance=-99.0,account type=C]], monthly income=0.0]
+
+[Customer Id =3,first name=JAMES,last name=PAGE, referee=[referee id=3,name=MICH
+AEL ELLIS,comments=MAJOR SHAREHOLDER OF THIS BANK],addresses={IndirectList: not
+instantiated},accounts=[[account id =3,balance=123.65,account type=C], [account
+id =7,balance=200.0,account type=S], [account id =8,balance=250.0,account type=X
+]], monthly income=2000.0]
+subQuery4:
+[Customer Id =4,first name=EDWARD,last name=COOK, referee=[referee id=4,name=KIN
+G,comments=HE SHOULD BANK WITH US],addresses={IndirectList: not instantiated},ac
+counts=[[account id =4,balance=23.0,account type=C], [account id =5,balance=5200
+.0,account type=S], [account id =6,balance=400.0,account type=X]], monthly incom
+e=3000.0]
+[Customer Id =2,first name=JANE,last name=KING, referee=[referee id=2,name=DR WI
+LLIAM SMITH,comments=MEDICAL PRACTIONER],addresses={IndirectList: not instantiat
+ed},accounts=[[account id =2,balance=-99.0,account type=C]], monthly income=0.0]
+
+[Customer Id =3,first name=JAMES,last name=PAGE, referee=[referee id=3,name=MICH
+AEL ELLIS,comments=MAJOR SHAREHOLDER OF THIS BANK],addresses={IndirectList: not
+instantiated},accounts=[[account id =3,balance=123.65,account type=C], [account
+id =7,balance=200.0,account type=S], [account id =8,balance=250.0,account type=X
+]], monthly income=2000.0]
+functionQuery:
+[address id=1,address=49, KINGS ROAD MANCHESTER,country=UK,post code=MN1 2AB]
+functionQuery2:
+[address id=2,address=FLAT 10, QUEENS COURT, THAMES STREET, ROCHESTER,country=UK
+,post code=RC3 9XY]
+functionQuery3:
+[address id=3,address=THE GRANGE, HILL RISE, BOXLEY, KENT,country= UK ,post code
+=MD9 1BX]
+[address id=1,address=49, KINGS ROAD MANCHESTER,country=UK,post code=MN1 2AB]
+[address id=2,address=FLAT 10, QUEENS COURT, THAMES STREET, ROCHESTER,country=UK
+,post code=RC3 9XY]
+functionQuery4:
+[address id=4,address=2 HIGH STREET, HORSHAM,country=uk,post code=2HO 1RU]
+functionQuery5:
+[address id=4,address=2 HIGH STREET, HORSHAM,country=uk,post code=2HO 1RU]
+functionQuery6:
+[address id=2,address=FLAT 10, QUEENS COURT, THAMES STREET, ROCHESTER,country=UK
+,post code=RC3 9XY]
+functionQuery7:
+[account id =5,balance=5200.0,account type=S]
+[account id =3,balance=123.65,account type=C]
+[account id =7,balance=200.0,account type=S]
+[account id =6,balance=400.0,account type=X]
+[account id =2,balance=-99.0,account type=C]
+[account id =8,balance=250.0,account type=X]
+[account id =1,balance=430.5,account type=C]
+functionQuery8:
+[account id =3,balance=123.65,account type=C]
+[account id =2,balance=-99.0,account type=C]
+[account id =4,balance=23.0,account type=C]
+functionQuery9:
+[account id =6,balance=400.0,account type=X]
+[account id =2,balance=-99.0,account type=C]
+[account id =8,balance=250.0,account type=X]
+[account id =4,balance=23.0,account type=C]
+functionQuery10:
+[Customer Id =4,first name=EDWARD,last name=COOK, referee=[referee id=4,name=KIN
+G,comments=HE SHOULD BANK WITH US],addresses={IndirectList: not instantiated},ac
+counts=[[account id =4,balance=23.0,account type=C], [account id =5,balance=5200
+.0,account type=S], [account id =6,balance=400.0,account type=X]], monthly incom
+e=3000.0]
+[Customer Id =3,first name=JAMES,last name=PAGE, referee=[referee id=3,name=MICH
+AEL ELLIS,comments=MAJOR SHAREHOLDER OF THIS BANK],addresses={IndirectList: not
+instantiated},accounts=[[account id =3,balance=123.65,account type=C], [account
+id =7,balance=200.0,account type=S], [account id =8,balance=250.0,account type=X
+]], monthly income=2000.0]
+
+C:\glassfish-3.1.1\bin>

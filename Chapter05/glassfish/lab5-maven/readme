@@ -1,0 +1,19 @@
+build/deploy as usual.
+
+run:
+
+C:\glassfish-3.1.1\bin>asadmin get-client-stubs --appname lab5-maven-ear-1.0 c:\local
+Command get-client-stubs executed successfully.
+
+C:\glassfish-3.1.1\bin>appclient -jar c:\local\lab5-maven-ear-1.0Client.jar
+deleting accounts with no customers
+updating checking accounts
+findAllAccounts:
+[account id =2,balance=-108.9,account type=C]
+[account id =8,balance=250.0,account type=X]
+[account id =7,balance=200.0,account type=S]
+[account id =4,balance=25.3,account type=C]
+[account id =5,balance=5200.0,account type=S]
+[account id =1,balance=473.55,account type=C]
+[account id =3,balance=136.01500000000001,account type=C]
+[account id =6,balance=400.0,account type=X]

@@ -1,0 +1,24 @@
+1)	netbeans mvn clean and build
+2)	manually deploy (first undeploy last project) :
+W:\LA\academic\booksample\ejb3\5609_Code\Chapter06\glassfish\lab6-maven\lab6-maven-ear\target
+3)	since for this example I have moved glassfish to c:\ make sure you also move javadb to c:\
+(find in C:\Program Files\glassfish-3.1.1\javadb)
+This is not needed to run but to avoid getting the warning “Cannot find javadb client jar”
+4)	from the command prompt:
+a)	get theclient stubs
+C:\glassfish-3.1.1\bin>asadmin get-client-stubs --appname lab6-maven-ear-1.0 c:\local
+Command get-client-stubs executed successfully.
+b)	Run the application sending 4 as paramter
+        do not run more than once. unless you redeploy ( will get duplicate keys violations).
+
+C:\glassfish-3.1.1\bin>appclient -jar c:\local\lab6-maven-ear-1.0Client.jar 4
+[Customer Id =4,first name=EDWARD,last name=COOK, referee=[referee id=4,name=RIC
+HARD BRANSON,comments=HE SHOULD BANK WITH US],addresses={IndirectList: not insta
+ntiated},accounts=[[account id =4,balance=23.0,account type=C], [account id =5,b
+alance=5200.0,account type=S]]]
+[Customer Id =4,first name=Michael,last name=COOK, referee=[referee id=4,name=RI
+CHARD BRANSON,comments=HE SHOULD BANK WITH US],addresses={IndirectList: not inst
+antiated},accounts=[[account id =4,balance=666.66,account type=C], [account id =
+5,balance=666.66,account type=S]]]
+null
+findAllAccounts:

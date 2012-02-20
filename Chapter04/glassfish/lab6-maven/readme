@@ -1,0 +1,33 @@
+build/deploy as usual.
+
+if errors re-start everything (glassfish,javadb)
+run:
+
+C:\glassfish-3.1.1\bin>asadmin get-client-stubs --appname lab6-maven-ear-1.0 c:\
+local
+Command get-client-stubs executed successfully.
+
+C:\glassfish-3.1.1\bin>appclient -jar c:\local\lab6-maven-ear-1.0Client.jar 1 2
+[account id =5,balance=5200.0,account type=S,interest rate=4.5]
+[account id =4,balance=23.0,account type=C,overdraft limit=100.0]
+[account id =3,balance=123.65,account type=C,overdraft limit=100.0]
+[account id =1,balance=430.5,account type=C,overdraft limit=0.0]
+[account id =2,balance=99.0,account type=C,overdraft limit=100.0]
+
+this is the schema:
+CREATE TABLE ACCOUNT (ACCOUNT_ID INTEGER NOT NULL, ACCOUNT_TYPE VARCHAR(31), BALANCE FLOAT, PRIMARY KEY (ACCOUNT_ID))
+CREATE TABLE CHECKINGACCOUNT (ACCOUNT_ID INTEGER NOT NULL, OVERDRAFTLIMIT FLOAT, PRIMARY KEY (ACCOUNT_ID))
+ALTER TABLE CHECKINGACCOUNT ADD CONSTRAINT CHCKNGACCOUNTCCNTD FOREIGN KEY (ACCOUNT_ID) REFERENCES ACCOUNT (ACCOUNT_ID)
+
+CREATE TABLE SAVINGSACCOUNT (ACCOUNT_ID INTEGER NOT NULL, INTERESTRATE FLOAT, PRIMARY KEY (ACCOUNT_ID))
+ALTER TABLE SAVINGSACCOUNT ADD CONSTRAINT SVNGSACCOUNTCCNTID FOREIGN KEY (ACCOUNT_ID) REFERENCES ACCOUNT (ACCOUNT_ID)
+
+your sql experience will tell you that the way to put this together is
+
+select a.account_id,a.balance,b.*
+   from account a, (choses a.type if 'C' then checkintabou b else
+            savingaccount d.)
+
+have you ever done this query?
+
+

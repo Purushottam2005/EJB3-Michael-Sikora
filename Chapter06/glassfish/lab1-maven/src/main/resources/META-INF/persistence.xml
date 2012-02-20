@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="BankService" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <!--<jta-data-source>jdbc/sample</jta-data-source>-->
+    <!--<jta-data-source>jdbc/__default</jta-data-source>-->
+    <!--the default is jdbc/__default anyway:points to sun-appserv-samples database    -->
+    <class>ejb30.entity.Customer</class>    
+    <properties>
+        
+        <!-- since there is no container to specify connection you must provide it yourself -->
+        
+         <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+         <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sun-appserv-samples"/>
+         <property name="javax.persistence.jdbc.password" value="app"/>
+         <property name="javax.persistence.jdbc.user" value="app"/>
+         
+       <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+       <property name="eclipselink.ddl-generation.output-mode" value="both"/>      
+       <property name="eclipselink.target-database" value="JavaDB"/>
+       <property name="eclipselink.create-ddl-jdbc-file-name" value="create.sql"/>
+
+<!--
+        it appears to be a glassfish bug when you introduce the below properties 
+        the script files are generated but not executed in database.
+        
+       <property name="eclipselink.drop-ddl-jdbc-file-name" value="drop.sql"/>
+       <property name="eclipselink.create-ddl-jdbc-file-name" value="create.sql"/>
+       <property name="eclipselink.application-location" value="C:\local\"/>
+      
+-->       
+
+<property name="show_sql" value="true"/>
+<property name="format_sql" value="true"/>
+<property name="use_sql_comments" value="false"/>
+       
+    </properties>
+    
+  </persistence-unit>
+</persistence>

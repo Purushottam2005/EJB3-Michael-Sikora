@@ -1,0 +1,47 @@
+build/deploy as usual.
+
+run:
+
+
+C:\glassfish-3.1.1\bin>asadmin get-client-stubs --appname lab4-maven-ear-1.0 c:\
+local
+Command get-client-stubs executed successfully.
+
+C:\glassfish-3.1.1\bin>appclient -jar c:\local\lab4-maven-ear-1.0Client.jar luis
+ acevedo 1 1
+null
+[first name=SIMON,last name=KING, referee=[referee id=1,name=SIR JOHN DEED,comme
+nts=JUDGE],addresses=[[address id=1,address=49, KINGS ROAD MANCHESTER,country=UK
+,post code=MN1 2AB]],accounts=[[account id =1,balance=430.5,account type=C]],gen
+der=MALE]
+[first name=SIMON,last name=KING, referee=[referee id=1,name=SIR JOHN DEED,comme
+nts=JUDGE],addresses=[[address id=1,address=49, KINGS ROAD MANCHESTER,country=UK
+,post code=MN1 2AB]],accounts=[[account id =1,balance=430.5,account type=C]],gen
+der=MALE]
+[first name=JANE,last name=KING, referee=[referee id=2,name=DR WILLIAM SMITH,com
+ments=MEDICAL PRACTIONER],addresses=[[address id=1,address=49, KINGS ROAD MANCHE
+STER,country=UK,post code=MN1 2AB]],accounts=[[account id =2,balance=99.0,accoun
+t type=C]],gender=FEMALE]
+
+
+this is the schema:
+CREATE TABLE CUSTOMER (LAST_NAME VARCHAR(30) NOT NULL, FIRST_NAME VARCHAR(30) NOT NULL, GENDER VARCHAR(20), REFEREE_REF_ID INTEGER, PRIMARY KEY (LAST_NAME, FIRST_NAME))
+ALTER TABLE CUSTOMER ADD CONSTRAINT CSTOMERRFEREEREFID FOREIGN KEY (REFEREE_REF_ID) REFERENCES REFEREE (REF_ID)
+
+CREATE TABLE ACCOUNT (ACCOUNT_ID INTEGER NOT NULL, ACCOUNT_TYPE VARCHAR(2), BALANCE FLOAT, CUSTOMER_FNAME VARCHAR(30), CUSTOMER_LNAME VARCHAR(30), PRIMARY KEY (ACCOUNT_ID))
+ALTER TABLE ACCOUNT ADD CONSTRAINT CCOUNTCSTOMERLNAME FOREIGN KEY (CUSTOMER_LNAME, CUSTOMER_FNAME) REFERENCES CUSTOMER (LAST_NAME, FIRST_NAME)
+
+CREATE TABLE ADDRESS (ADDRESS_ID INTEGER NOT NULL, ADDRESSLINE VARCHAR(255), COUNTRY VARCHAR(20), POST_CODE VARCHAR(10), PRIMARY KEY (ADDRESS_ID))
+
+CREATE TABLE REFEREE (REF_ID INTEGER NOT NULL, COMMENTS VARCHAR(40), NAME VARCHAR(30), PRIMARY KEY (REF_ID))
+
+CREATE TABLE CUSTOMER_ADDRESS (CUST_FNAME VARCHAR(30) NOT NULL, CUST_LNAME VARCHAR(30) NOT NULL, ADD_ID INTEGER NOT NULL, PRIMARY KEY (CUST_FNAME, CUST_LNAME, ADD_ID))
+ALTER TABLE CUSTOMER_ADDRESS ADD CONSTRAINT CSTMRDDRESSCSTLNME FOREIGN KEY (CUST_LNAME, CUST_FNAME) REFERENCES CUSTOMER (LAST_NAME, FIRST_NAME)
+ALTER TABLE CUSTOMER_ADDRESS ADD CONSTRAINT CSTOMERADDRESSDDID FOREIGN KEY (ADD_ID) REFERENCES ADDRESS (ADDRESS_ID)
+
+notice no enumerated constraint is generated for javadb (you can mannualy update gender in customer with wrong values)
+now let's do this test in oracle
+
+i suggest you read this blog:
+
+luisacevedo_blog: tipsjpamap

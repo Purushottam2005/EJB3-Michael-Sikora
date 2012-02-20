@@ -1,0 +1,59 @@
+build/deploy as usual.
+
+run:
+
+C:\glassfish-3.1.1\bin>asadmin get-client-stubs --appname lab6-maven-ear-1.0 c:\
+local
+Command get-client-stubs executed successfully.
+
+C:\glassfish-3.1.1\bin>appclient -jar c:\local\lab6-maven-ear-1.0Client.jar
+nativeQuery:
+[account id =3,balance=123.65,account type=C]
+[account id =5,balance=5200.0,account type=S]
+[account id =2,balance=-99.0,account type=C]
+[account id =4,balance=23.0,account type=C]
+[account id =1,balance=430.5,account type=C]
+nativeQuery2:
+[account id =3,balance=123.65,account type=C]
+[Customer Id =3,first name=JAMES,last name=PAGE]
+[account id =5,balance=5200.0,account type=S]
+[Customer Id =4,first name=EDWARD,last name=COOK]
+[account id =2,balance=-99.0,account type=C]
+[Customer Id =2,first name=JANE,last name=KING]
+[account id =4,balance=23.0,account type=C]
+[Customer Id =4,first name=EDWARD,last name=COOK]
+[account id =1,balance=430.5,account type=C]
+[Customer Id =1,first name=SIMON,last name=KING]
+nativeQuery3:
+COOK
+KING
+KING
+PAGE
+nativeQuery4:
+[account id =3,balance=123.65,account type=C]
+PAGE
+[account id =5,balance=5200.0,account type=S]
+COOK
+[account id =2,balance=-99.0,account type=C]
+KING
+[account id =4,balance=23.0,account type=C]
+COOK
+[account id =1,balance=430.5,account type=C]
+KING
+nativeQuery5:
+[account id =3,balance=123.65,account type=C]
+[account id =5,balance=5200.0,account type=S]
+[account id =2,balance=-99.0,account type=C]
+[account id =4,balance=23.0,account type=C]
+[account id =1,balance=430.5,account type=C]
+nativeQuery6:
+[account id =3,balance=123.65,account type=C]
+PAGE
+[account id =5,balance=5200.0,account type=S]
+COOK
+[account id =2,balance=-99.0,account type=C]
+KING
+[account id =4,balance=23.0,account type=C]
+COOK
+[account id =1,balance=430.5,account type=C]
+KING

@@ -1,0 +1,48 @@
+build/deploy as usual.
+
+run:
+
+C:\glassfish-3.1.1\bin>asadmin get-client-stubs --appname lab2-maven-ear-1.0 c:\
+local
+Command get-client-stubs executed successfully.
+
+C:\glassfish-3.1.1\bin>appclient -jar c:\local\lab2-maven-ear-1.0Client.jar 1 1 1
+[Customer Id =1,first name=SIMON,last name=KING, referee=[referee id=1,name=SIR
+JOHN DEED,comments=JUDGE],addresses=[[address id=1,address=49, KINGS ROAD MANCHE
+STER,country=UK,post code=MN1 2AB]],accounts=[[account id =1,balance=430.5,accou
+nt type=C]]]
+[Customer Id =1,first name=SIMON,last name=KING, referee=[referee id=1,name=SIR
+JOHN DEED,comments=JUDGE],addresses=[[address id=1,address=49, KINGS ROAD MANCHE
+STER,country=UK,post code=MN1 2AB]],accounts=[[account id =1,balance=430.5,accou
+nt type=C]]]
+[Customer Id =1,first name=SIMON,last name=KING, referee=[referee id=1,name=SIR
+JOHN DEED,comments=JUDGE],addresses=[[address id=1,address=49, KINGS ROAD MANCHE
+STER,country=UK,post code=MN1 2AB]],accounts=[[account id =1,balance=430.5,accou
+nt type=C]]]
+[Customer Id =2,first name=JANE,last name=KING, referee=[referee id=2,name=DR WI
+LLIAM SMITH,comments=MEDICAL PRACTIONER],addresses=[[address id=1,address=49, KI
+NGS ROAD MANCHESTER,country=UK,post code=MN1 2AB]],accounts=[[account id =2,bala
+nce=99.0,account type=C]]]
+
+if it does not run. just reset glassfish
+
+this is the schema:
+
+CREATE TABLE CUSTOMER (CUSTOMER_ID INTEGER NOT NULL, FIRST_NAME VARCHAR(30), LAST_NAME VARCHAR(30), REFEREE_REF_ID INTEGER, PRIMARY KEY (CUSTOMER_ID))
+ALTER TABLE CUSTOMER ADD CONSTRAINT CSTOMERRFEREEREFID FOREIGN KEY (REFEREE_REF_ID) REFERENCES REFEREE (REF_ID)
+
+CREATE TABLE ACCOUNT (ACCOUNT_ID INTEGER NOT NULL, ACCOUNT_TYPE VARCHAR(2), BALANCE FLOAT, CUSTOMER_ID INTEGER, PRIMARY KEY (ACCOUNT_ID))
+ALTER TABLE ACCOUNT ADD CONSTRAINT ACCOUNTCUSTOMER_ID FOREIGN KEY (CUSTOMER_ID) REFERENCES CUSTOMER (CUSTOMER_ID)
+
+CREATE TABLE ADDRESS (ADDRESS_ID INTEGER NOT NULL, ADDRESSLINE VARCHAR(255), COUNTRY VARCHAR(20), POSTCODE VARCHAR(255), PRIMARY KEY (ADDRESS_ID))
+
+CREATE TABLE REFEREE (REF_ID INTEGER NOT NULL, COMMENTS VARCHAR(40), NAME VARCHAR(30), PRIMARY KEY (REF_ID))
+
+CREATE TABLE CUSTOMER_ADDRESS (CUST_ID INTEGER NOT NULL, ADD_ID INTEGER NOT NULL, PRIMARY KEY (CUST_ID, ADD_ID))
+ALTER TABLE CUSTOMER_ADDRESS ADD CONSTRAINT CSTMERADDRESSCSTID FOREIGN KEY (CUST_ID) REFERENCES CUSTOMER (CUSTOMER_ID)
+ALTER TABLE CUSTOMER_ADDRESS ADD CONSTRAINT CSTOMERADDRESSDDID FOREIGN KEY (ADD_ID) REFERENCES ADDRESS (ADDRESS_ID)
+
+
+i suggest you read this blog:
+
+luisacevedo_blog: tipsjpamap

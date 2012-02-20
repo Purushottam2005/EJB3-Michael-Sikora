@@ -1,0 +1,78 @@
+build/deploy as usual.
+
+run:
+
+C:\glassfish-3.1.1\bin>asadmin get-client-stubs --appname lab1-maven-ear-1.0 c:\
+local
+Command get-client-stubs executed successfully.
+
+C:\glassfish-3.1.1\bin>appclient -jar c:\local\lab1-maven-ear-1.0Client.jar 1
+simpleQuery:
+[Customer Id =3,first name=JAMES,last name=PAGE, referee=[referee id=3,name=MICH
+AEL ELLIS,comments=MAJOR SHAREHOLDER OF THIS BANK],addresses={IndirectList: not
+instantiated},accounts={IndirectList: not instantiated}]
+[Customer Id =4,first name=EDWARD,last name=COOK, referee=[referee id=4,name=RIC
+HARD BRANSON,comments=HE SHOULD BANK WITH US],addresses={IndirectList: not insta
+ntiated},accounts={IndirectList: not instantiated}]
+[Customer Id =1,first name=SIMON,last name=KING, referee=[referee id=1,name=SIR
+JOHN DEED,comments=JUDGE],addresses={IndirectList: not instantiated},accounts={I
+ndirectList: not instantiated}]
+[Customer Id =2,first name=JANE,last name=KING, referee=[referee id=2,name=DR WI
+LLIAM SMITH,comments=MEDICAL PRACTIONER],addresses={IndirectList: not instantiat
+ed},accounts={IndirectList: not instantiated}]
+simpleQuery2:
+First Name: JAMES Last Name: PAGE
+First Name: EDWARD Last Name: COOK
+First Name: SIMON Last Name: KING
+First Name: JANE Last Name: KING
+simpleQuery3:
+Last Name: PAGE
+Last Name: COOK
+Last Name: KING
+simpleQuery4:
+[Customer Id =3,first name=JAMES,last name=PAGE, referee=[referee id=3,name=MICH
+AEL ELLIS,comments=MAJOR SHAREHOLDER OF THIS BANK],addresses={IndirectList: not
+instantiated},accounts={IndirectList: not instantiated}]
+simpleQuery5:
+[Customer Id =1,first name=SIMON,last name=KING, referee=[referee id=1,name=SIR
+JOHN DEED,comments=JUDGE],addresses={IndirectList: not instantiated},accounts={I
+ndirectList: not instantiated}]
+simpleQuery6:
+[address id=4,address=2 HIGH STREET, HORSHAM,country=UK,post code=null]
+simpleQuery7:
+[account id =2,balance=99.0,account type=C]
+[account id =4,balance=23.0,account type=C]
+simpleQuery8:
+[account id =1,balance=430.5,account type=C]
+[account id =2,balance=99.0,account type=C]
+simpleQuery9:
+[account id =1,balance=430.5,account type=C]
+[account id =2,balance=99.0,account type=C]
+simpleQuery10:
+[Customer Id =3,first name=JAMES,last name=PAGE, referee=[referee id=3,name=MICH
+AEL ELLIS,comments=MAJOR SHAREHOLDER OF THIS BANK],addresses={IndirectList: not
+instantiated},accounts={IndirectList: not instantiated}]
+[Customer Id =2,first name=JANE,last name=KING, referee=[referee id=2,name=DR WI
+LLIAM SMITH,comments=MEDICAL PRACTIONER],addresses={IndirectList: not instantiat
+ed},accounts={IndirectList: not instantiated}]
+simpleQuery11:
+[account id =4,balance=23.0,account type=C]
+[account id =2,balance=99.0,account type=C]
+[account id =3,balance=123.65,account type=C]
+[account id =1,balance=430.5,account type=C]
+[account id =5,balance=5200.0,account type=S]
+simpleQuery12:
+[account id =5,balance=5200.0,account type=S]
+[account id =1,balance=430.5,account type=C]
+[account id =3,balance=123.65,account type=C]
+[account id =2,balance=99.0,account type=C]
+[account id =4,balance=23.0,account type=C]
+simpleQuery13:
+[account id =1,balance=430.5,account type=C]
+[account id =3,balance=123.65,account type=C]
+[account id =2,balance=99.0,account type=C]
+[account id =4,balance=23.0,account type=C]
+[account id =5,balance=5200.0,account type=S]
+
+C:\glassfish-3.1.1\bin>
+

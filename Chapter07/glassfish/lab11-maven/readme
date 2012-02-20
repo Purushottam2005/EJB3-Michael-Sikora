@@ -1,0 +1,9 @@
+1)	netbeans mvn clean and build
+2)	manually deploy :
+W:\LA\academic\booksample\ejb3\5609_Code\Chapter07\glassfish\lab11-maven\lab11-maven-ear\target
+3)	since for this example I have moved glassfish to c:\ make sure you also move javadb to c:\
+(find in C:\Program Files\glassfish-3.1.1\javadb)
+This is not needed to run but to avoid getting the warning �Cannot find javadb client jar�
+
+you can test this one in weblogic
+by simply creating the datasource ( I will upload a video to youtube to show how to create this datasource)

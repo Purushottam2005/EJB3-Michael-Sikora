@@ -1,0 +1,21 @@
+this is a simple standalone maven project
+
+you only need to include the dependencies for eclipse link and java derby (see pom.xml)
+
+make sure you undeploy last sample to wipe the database tables
+
+since this sample does not run in a container you have to inject the database access (see persistence.xml)
+
+mvn clean and build
+
+edit main class and arguments (right click maven project-run)
+main class:ejb30.client.BankClient
+arguments: 1 john doe.
+
+this is the output
+
+[EL Info]: 2012-02-14 17:10:53.303--ServerSession(208192108)--EclipseLink, version: Eclipse Persistence Services - 2.2.0.v20110202-r8913
+[EL Info]: 2012-02-14 17:10:53.434--ServerSession(208192108)--file:/W:/LA/academic/booksample/ejb3/5609_Code/Chapter06/glassfish/lab1-maven/target/classes/_BankService login successful
+[Customer Id =2,first name=john,last name=doe]
+[EL Info]: 2012-02-14 17:10:53.753--ServerSession(208192108)--file:/W:/LA/academic/booksample/ejb3/5609_Code/Chapter06/glassfish/lab1-maven/target/classes/_BankService logout successful
+------------------------------------------------------------------------

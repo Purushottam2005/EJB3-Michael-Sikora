@@ -1,0 +1,30 @@
+build/deploy as usual.
+
+for this lab we change the ddl-generation (persistence.xml) from "drop-and-create-tables" to "only create-tables"
+we will need the data for lab 6
+
+
+run:
+
+C:\glassfish-3.1.1\bin>asadmin get-client-stubs --appname lab4-maven-ear-1.0 c:\
+local
+Command get-client-stubs executed successfully.
+
+C:\glassfish-3.1.1\bin>appclient -jar c:\local\lab4-maven-ear-1.0Client.jar 1
+parameterQuery:
+[Customer Id =2,first name=JANE,last name=KING, referee=[referee id=2,name=DR WI
+LLIAM SMITH,comments=MEDICAL PRACTIONER],addresses={IndirectList: not instantiat
+ed},accounts={IndirectList: not instantiated}]
+parameterQuery2:
+[Customer Id =2,first name=JANE,last name=KING, referee=[referee id=2,name=DR WI
+LLIAM SMITH,comments=MEDICAL PRACTIONER],addresses={IndirectList: not instantiat
+ed},accounts={IndirectList: not instantiated}]
+parameterQuery3:
+[Customer Id =2,first name=JANE,last name=KING, referee=[referee id=2,name=DR WI
+LLIAM SMITH,comments=MEDICAL PRACTIONER],addresses={IndirectList: not instantiat
+ed},accounts={IndirectList: not instantiated}]
+parameterQuery4:
+[account id =1,balance=430.5,account type=C]
+[account id =3,balance=123.65,account type=C]
+parameterQuery5:
+[account id =5,balance=5200.0,account type=S]

@@ -1,0 +1,24 @@
+1)	netbeans mvn clean and build
+2)	manually deploy :
+W:\LA\academic\booksample\ejb3\5609_Code\Chapter06\glassfish\lab4-maven\lab4-maven-ear\target
+3)	since for this example I have moved glassfish to c:\ make sure you also move javadb to c:\
+(find in C:\Program Files\glassfish-3.1.1\javadb)
+This is not needed to run but to avoid getting the warning “Cannot find javadb client jar”
+4)	from the command prompt:
+a)	get theclient stubs
+C:\glassfish-3.1.1\bin>asadmin get-client-stubs --appname lab4-maven-ear-1.0 c:\local
+Command get-client-stubs executed successfully.
+b)	Run the application
+C:\glassfish-3.1.1\bin>appclient -jar c:\local\lab4-maven-ear-1.0Client.jar 1 john doe
+[Customer Id =1,first name=SIMON,last name=KING, referee=[referee id=1,name=SIR
+JOHN DEED,comments=JUDGE],addresses={IndirectList: not instantiated},accounts=[[
+account id =1,balance=430.5,account type=C]]]
+[Customer Id =1,first name=Michael,last name=KING, referee=[referee id=1,name=SI
+R JOHN DEED,comments=JUDGE],addresses={IndirectList: not instantiated},accounts=
+[[account id =1,balance=666.66,account type=C]]]
+null
+findAllAccounts:
+[account id =3,balance=123.65,account type=C]
+[account id =2,balance=99.0,account type=C]
+[account id =5,balance=5200.0,account type=S]
+[account id =4,balance=23.0,account type=C]
