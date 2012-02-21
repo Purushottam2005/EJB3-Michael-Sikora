@@ -6,4 +6,14 @@ right click inside pom - insert code - find gf-client-3.1.1
 
 maven will find in central if you don't have it in your local maven repository
 
+as long as you have gf-client in your classpath there is no need to specify context properties.
+application will take the default jndi.property that comes with glassfish
+manually deploy lab1-maven-ear-1.0
+
+
+to run the client..
+
+from netbeans right click lab1-maven-client --properties>---run>
+edit VM options to show -DAS_DERBY_INSTALL="C:/Program Files/glassfish-3.1.1/javadb"  or whereever javadb is installed.
+right click and run lab1-maven-client
 

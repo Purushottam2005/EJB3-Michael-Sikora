@@ -11,6 +11,5 @@
     <module>lab1-maven-ejb</module>
     <module>lab1-maven-jar</module>
     <module>lab1-maven-client</module>
-    <module>mavenproject1</module>
   </modules>
 </project>
